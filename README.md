@@ -20,9 +20,10 @@ Architecture implemented:
 
 # 🏗️ Architecture
 
+![Data Warehouse Architecture Flow](docs/dw_architecture.png)
+
 ## Medallion Architecture
 
-![Data Warehouse Architecture Flow](docs/dw_architecture.png)
 
 ### 🥉 Bronze Layer
 
@@ -100,6 +101,14 @@ data-warehouse-project/
 │   │   └── ddl_gold.sql
 │   │
 │   ├── raw_practice_scripts
+│   │   ├── gold_dim_products.sql
+│   │   ├── silver_crm_cust_info.sql
+│   │   ├── silver_crm_prd_info.sql
+│   │   ├── silver_crm_sales_details.sql
+│   │   ├── silver_erp_cust_az12.sql
+│   │   ├── silver_erp_loc_a101.sql
+│   │   └── silver_erp_px_cat_g1v2.sql
+│   │
 │   └── init_database.sql
 │
 └── tests
@@ -144,6 +153,8 @@ Files:
 ---
 
 # 🔄 Warehouse Execution Flow
+
+![Data Flow Diagram](docs/data_flow.png)
 
 ## 1️⃣ Initialize Database
 
