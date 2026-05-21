@@ -120,6 +120,8 @@ data-warehouse-project/
 
 # 📊 Source Systems
 
+![Integration Model](docs/integration_model.png)
+
 ## CRM Source
 
 Contains:
@@ -245,6 +247,8 @@ Purpose:
 ---
 
 ## 6️⃣ Create Gold Layer
+
+![Data Model Diagram](docs/data_model.png)
 
 Run:
 
