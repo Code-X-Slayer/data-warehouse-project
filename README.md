@@ -41,6 +41,8 @@ The project demonstrates how raw business data flows through a complete analytic
 
 ## 🏗️ Project 1 — SQL Data Warehouse Engineering (Main Focus ⭐)
 
+![Data Architecture](/docs/dw_architecture.png)
+
 This module implements a complete **Modern Data Warehouse** using the **Medallion Architecture** approach.
 
 ### Architecture Layers
