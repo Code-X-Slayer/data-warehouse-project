@@ -1,65 +1,166 @@
-# 📊 Data Warehouse & Analytics Project
+# 📊 SQL Data Warehouse & Advanced Analytics - Complete Learning Project
 
-Modern SQL Server data warehouse implementing Medallion Architecture for scalable ETL pipelines, data transformation, and analytics-ready reporting.
-
----
-
-# 🚀 Project Overview
-
-This project demonstrates the end-to-end implementation of a production-style data warehouse using SQL Server.
-
-The warehouse integrates data from multiple source systems, processes it through layered transformations, and delivers analytics-ready models for reporting and business intelligence.
-
-Architecture implemented:
-
-* Bronze Layer → Raw ingestion
-* Silver Layer → Cleansed and standardized data
-* Gold Layer → Business-ready analytical models
+> **A complete end-to-end SQL learning project covering Data Warehousing, Exploratory Data Analysis (EDA), Advanced Analytics, and Reporting using production-style SQL architecture and workflows.**
 
 ---
 
-# 🏗️ Architecture
+# 🙏 Acknowledgment
 
-![Data Warehouse Architecture Flow](docs/dw_architecture.png)
+Special thanks to Baraa Masoud for creating the incredible **30-Hour SQL Master Class: Zero to Hero**.
 
-## Medallion Architecture
+This project was heavily inspired by the practical and industry-oriented approach taught throughout the course.
 
+### What makes the course exceptional?
+
+- ✅ Real-world SQL engineering concepts
+- ✅ Production-grade implementation patterns
+- ✅ Enterprise-level data warehouse architecture
+- ✅ End-to-end analytics workflows
+- ✅ Clear explanations for beginners and intermediate learners
+- ✅ Complete hands-on projects instead of isolated tutorials
+
+📺 YouTube Channel: http://bit.ly/3GiCVUE
+
+---
+
+# 🎯 Project Overview
+
+This repository combines **three major SQL learning modules** into one structured project:
+
+1. **SQL Data Warehouse Engineering**
+2. **Exploratory Data Analysis (EDA)**
+3. **Advanced Analytics & Reporting**
+
+The project demonstrates how raw business data flows through a complete analytics pipeline using the **Medallion Architecture** pattern.
+
+---
+
+# 📦 Project Modules
+
+---
+
+## 🏗️ Project 1 — SQL Data Warehouse Engineering (Main Focus ⭐)
+
+This module implements a complete **Modern Data Warehouse** using the **Medallion Architecture** approach.
+
+### Architecture Layers
 
 ### 🥉 Bronze Layer
-
-Raw ingestion layer that stores source data with minimal transformation.
+Raw ingestion layer for source-system data.
 
 Responsibilities:
-
-* Load CRM and ERP CSV files
-* Preserve raw source structure
-* Maintain source-level traceability
-
----
+- CRM & ERP raw ingestion
+- Historical preservation
+- Source fidelity
+- Staging tables
 
 ### 🥈 Silver Layer
-
-Transformation layer for cleansing and standardization.
+Data cleansing and transformation layer.
 
 Responsibilities:
+- Data standardization
+- Null handling
+- Deduplication
+- Business rule validation
+- Type conversion
 
-* Data cleaning
-* Null handling
-* Deduplication
-* Standardization
-* Validation
+### 🥇 Gold Layer
+Analytics-ready dimensional model.
+
+Responsibilities:
+- Star schema implementation
+- Fact and dimension modeling
+- Reporting optimization
+- Business-ready datasets
+
+### Core Concepts Covered
+
+- Medallion Architecture
+- ETL Pipeline Development
+- Data Quality Validation
+- Incremental Processing
+- Dimensional Modeling
+- Star Schema Design
+- Stored Procedures
+- Data Warehouse Testing
+
+📄 Detailed Guide: `md/01_DATA_WAREHOUSE_README.md`
+
+Important Documentation:
+- `docs/dw_architecture.png`
+- `docs/data_model.png`
+- `docs/integration_model.png`
+- `docs/data_flow.png`
 
 ---
 
-### 🥇 Gold Layer
+## 🔍 Project 2 — Exploratory Data Analysis (EDA)
 
-Analytics layer optimized for reporting and business insights.
+This module focuses on structured SQL-based exploration techniques.
 
-Responsibilities:
+### Topics Covered
 
-* Fact and dimension modeling
-* Star schema design
-* Analytics-ready datasets
+- Database exploration
+- Schema analysis
+- Dimension exploration
+- Time-series analysis
+- KPI calculations
+- Magnitude analysis
+- Ranking analysis
+
+### EDA Workflow
+
+1. Database Exploration
+2. Dimensions Exploration
+3. Date Range Analysis
+4. Measures Exploration
+5. Magnitude Analysis
+6. Ranking Analysis
+
+📄 Detailed Guide: `md/02_EDA_README.md`
+
+Key Scripts:
+- `scripts/02_eda/01_database_exploration.sql`
+- `scripts/02_eda/02_dimensions_exploration.sql`
+- `scripts/02_eda/03_date_range_exploration.sql`
+- `scripts/02_eda/04_measures_exploration.sql`
+- `scripts/02_eda/05_magnitude_analysis.sql`
+- `scripts/02_eda/06_ranking_analysis.sql`
+
+---
+
+## 📈 Project 3 — Advanced Analytics & Reporting
+
+This module demonstrates advanced business analytics using SQL.
+
+### Analytics Topics
+
+- Change-over-time analysis
+- Cumulative analysis
+- Performance benchmarking
+- Part-to-whole analysis
+- Customer segmentation
+- Product segmentation
+
+### Reporting Layer
+
+Production-style analytical reports:
+
+- Customer Performance Report
+- Product Performance Report
+
+📄 Detailed Guide: `md/03_ADVANCED_ANALYTICS_README.md`
+
+Key Scripts:
+- `scripts/03_advaced_analytics/07_change_over_time_analysis.sql`
+- `scripts/03_advaced_analytics/08_cumulative_analysis.sql`
+- `scripts/03_advaced_analytics/09_performance_analysis.sql`
+- `scripts/03_advaced_analytics/10_part_to_whole_analysis.sql`
+- `scripts/03_advaced_analytics/11_data_segmentation.sql`
+
+Reports:
+- `scripts/04_reports/12_customer_report.sql`
+- `scripts/04_reports/13_product_report.sql`
 
 ---
 
@@ -67,6 +168,8 @@ Responsibilities:
 
 ```bash
 data-warehouse-project/
+├── LICENSE
+├── README_MAIN.md
 │
 ├── datasets
 │   ├── source_crm
@@ -88,276 +191,164 @@ data-warehouse-project/
 │   ├── master.drawio
 │   └── naming_conventions.md
 │
-├── scripts
-│   ├── bronze
-│   │   ├── ddl_bronze.sql
-│   │   └── proc_load_bronze.sql
-│   │
-│   ├── silver
-│   │   ├── ddl_silver.sql
-│   │   └── proc_load_silver.sql
-│   │
-│   ├── gold
-│   │   └── ddl_gold.sql
-│   │
-│   ├── raw_practice_scripts
-│   │   ├── gold_dim_products.sql
-│   │   ├── silver_crm_cust_info.sql
-│   │   ├── silver_crm_prd_info.sql
-│   │   ├── silver_crm_sales_details.sql
-│   │   ├── silver_erp_cust_az12.sql
-│   │   ├── silver_erp_loc_a101.sql
-│   │   └── silver_erp_px_cat_g1v2.sql
-│   │
-│   └── init_database.sql
+├── md
+│   ├── 01_DATA_WAREHOUSE_README.md
+│   ├── 02_EDA_README.md
+│   └── 03_ADVANCED_ANALYTICS_README.md
 │
-└── tests
-    ├── quality_checks_gold.sql
-    └── quality_checks_silver.sql
+└── scripts
+    ├── 01_data_warehouse
+    │   ├── bronze
+    │   │   ├── ddl_bronze.sql
+    │   │   └── proc_load_bronze.sql
+    │   │
+    │   ├── silver
+    │   │   ├── ddl_silver.sql
+    │   │   └── proc_load_silver.sql
+    │   │
+    │   ├── gold
+    │   │   └── ddl_gold.sql
+    │   │
+    │   ├── tests
+    │   │   ├── quality_checks_gold.sql
+    │   │   └── quality_checks_silver.sql
+    │   │
+    │   ├── init_database.sql
+    │   └── raw_practice
+    │
+    ├── 02_eda
+    │   ├── 00_init_database.sql
+    │   ├── 01_database_exploration.sql
+    │   ├── 02_dimensions_exploration.sql
+    │   ├── 03_date_range_exploration.sql
+    │   ├── 04_measures_exploration.sql
+    │   ├── 05_magnitude_analysis.sql
+    │   └── 06_ranking_analysis.sql
+    │
+    ├── 03_advaced_analytics
+    │   ├── 07_change_over_time_analysis.sql
+    │   ├── 08_cumulative_analysis.sql
+    │   ├── 09_performance_analysis.sql
+    │   ├── 10_part_to_whole_analysis.sql
+    │   └── 11_data_segmentation.sql
+    │
+    ├── 04_reports
+    │   ├── 12_customer_report.sql
+    │   └── 13_product_report.sql
+    │
+    └── raw_practice
+        ├── adv_eda.sql
+        ├── cust_report.sql
+        ├── eda.sql
+        ├── gold_dim_products.sql
+        ├── prod_report.sql
+        ├── silver_crm_cust_info.sql
+        ├── silver_crm_prd_info.sql
+        ├── silver_crm_sales_detials.sql
+        ├── silver_erp_cust_az12.sql
+        ├── silver_erp_loc_a101.sql
+        └── silver_erp_px_cat_g1v2.sql
 ```
 
 ---
 
-# 📊 Source Systems
+# 🚀 Quick Start
 
-![Integration Model](docs/integration_model.png)
-
-## CRM Source
-
-Contains:
-
-* Customer information
-* Product details
-* Sales transactions
-
-Files:
-
-* `cust_info.csv`
-* `prd_info.csv`
-* `sales_details.csv`
-
----
-
-## ERP Source
-
-Contains:
-
-* Customer reference data
-* Location mapping
-* Product category mapping
-
-Files:
-
-* `CUST_AZ12.csv`
-* `LOC_A101.csv`
-* `PX_CAT_G1V2.csv`
-
----
-
-# 🔄 Warehouse Execution Flow
-
-![Data Flow Diagram](docs/data_flow.png)
-
-## 1️⃣ Initialize Database
-
-Run:
+## Step 1 — Initialize Database
 
 ```sql
-:r scripts/init_database.sql
+:r scripts/01_data_warehouse/init_database.sql
 ```
-
-Purpose:
-
-* Create database
-* Create schemas
-* Initialize warehouse environment
 
 ---
 
-## 2️⃣ Create Bronze Layer Tables
-
-Run:
+## Step 2 — Create Bronze Layer
 
 ```sql
-:r scripts/bronze/ddl_bronze.sql
+:r scripts/01_data_warehouse/bronze/ddl_bronze.sql
+:r scripts/01_data_warehouse/bronze/proc_load_bronze.sql
 ```
-
-Purpose:
-
-* Create raw staging tables
-* Prepare Bronze ingestion layer
 
 ---
 
-## 3️⃣ Load Bronze Layer
-
-Create Procedure:
+## Step 3 — Create Silver Layer
 
 ```sql
-:r scripts/bronze/proc_load_bronze.sql
+:r scripts/01_data_warehouse/silver/ddl_silver.sql
+:r scripts/01_data_warehouse/silver/proc_load_silver.sql
 ```
-
-Execute:
-
-```sql
-EXEC bronze.load_bronze;
-```
-
-Purpose:
-
-* Load CRM and ERP CSV files
-* Populate Bronze tables
 
 ---
 
-## 4️⃣ Create Silver Layer Tables
-
-Run:
+## Step 4 — Create Gold Layer
 
 ```sql
-:r scripts/silver/ddl_silver.sql
+:r scripts/01_data_warehouse/gold/ddl_gold.sql
 ```
-
-Purpose:
-
-* Create cleaned and standardized tables
 
 ---
 
-## 5️⃣ Load Silver Layer
-
-Create Procedure:
+## Step 5 — Run Data Quality Checks
 
 ```sql
-:r scripts/silver/proc_load_silver.sql
+:r scripts/01_data_warehouse/tests/quality_checks_silver.sql
+:r scripts/01_data_warehouse/tests/quality_checks_gold.sql
 ```
-
-Execute:
-
-```sql
-EXEC silver.load_silver;
-```
-
-Purpose:
-
-* Transform Bronze data
-* Clean and standardize records
-* Apply validations
 
 ---
 
-## 6️⃣ Create Gold Layer
+# 📊 What You'll Learn
 
-![Data Model Diagram](docs/data_model.png)
-
-Run:
-
-```sql
-:r scripts/gold/ddl_gold.sql
-```
-
-Purpose:
-
-* Create fact and dimension tables
-* Build analytics-ready models
-
----
-
-# 🧪 Data Quality Checks
-
-Validation scripts included for:
-
-* Null validation
-* Duplicate detection
-* Referential integrity checks
-* Data consistency verification
-
-Scripts:
-
-```bash
-tests/
-├── quality_checks_gold.sql
-└── quality_checks_silver.sql
-```
+✅ Medallion Architecture  
+✅ Data Warehouse Design  
+✅ ETL Pipeline Development  
+✅ Incremental Processing  
+✅ Dimensional Modeling  
+✅ Star Schema Design  
+✅ Stored Procedures  
+✅ Window Functions  
+✅ CTEs & Advanced SQL  
+✅ Data Quality Frameworks  
+✅ Business Analytics  
+✅ Reporting & KPI Design  
+✅ SQL Optimization Techniques  
 
 ---
 
 # 🛠️ Technology Stack
 
-| Category        | Technology                   |
-| --------------- | ---------------------------- |
-| Database        | SQL Server Express           |
-| Language        | T-SQL                        |
-| IDE             | SQL Server Management Studio |
-| Version Control | Git & GitHub                 |
-| Documentation   | Markdown                     |
-| Diagramming     | Draw.io                      |
+| Component | Technology |
+|---|---|
+| Database | SQL Server |
+| SQL Dialect | T-SQL |
+| IDE | SQL Server Management Studio (SSMS) |
+| Source Systems | CRM & ERP CSV Files |
 
 ---
 
-# 📈 Concepts Demonstrated
+# 🤝 Contributing
 
-* ETL Pipeline Development
-* Data Warehousing
-* Medallion Architecture
-* Star Schema Modeling
-* Stored Procedures
-* Data Cleansing
-* Data Validation
-* SQL Transformation Logic
-* Analytical Modeling
+Contributions, improvements, and suggestions are welcome.
 
----
+If this project helps you:
 
-# 📚 Documentation
-
-| File                    | Description                   |
-| ----------------------- | ----------------------------- |
-| `data_catalog.md`       | Metadata and schema reference |
-| `data_flow.png`         | ETL pipeline flow             |
-| `data_model.png`        | Data model diagram            |
-| `dw_architecture.png`   | Warehouse architecture        |
-| `integration_model.png` | Source integration mapping    |
-| `naming_conventions.md` | SQL naming standards          |
-
----
-
-# ⚡ Setup
-
-Clone repository:
-
-```bash
-git clone https://github.com/Code-X-Slayer/data-warehouse-project.git
-cd data-warehouse-project
-```
-
----
-
-# 📊 Pipeline Flow
-
-```text
-CRM / ERP Sources
-        ↓
-Bronze Layer
-(Raw Data)
-        ↓
-Silver Layer
-(Cleansed Data)
-        ↓
-Gold Layer
-(Analytics Models)
-```
-
----
-
-# 🔗 Links
-
-* GitHub: [Code-X-Slayer GitHub](https://github.com/Code-X-Slayer?utm_source=chatgpt.com)
-* Repository: [Data Warehouse Project Repository](https://github.com/Code-X-Slayer/data-warehouse-project?utm_source=chatgpt.com)
-* Portfolio: [Portfolio Website](https://vijay-karthik.vercel.app?utm_source=chatgpt.com)
+- ⭐ Star the repository
+- 🍴 Fork the project
+- 📢 Share with others
+- 🧠 Suggest improvements
 
 ---
 
 # 📄 License
 
-MIT License
+MIT License — free to use for learning and teaching.
+
+---
+
+# 🎓 Final Note
+
+This repository is designed not just as a SQL tutorial, but as a practical demonstration of how modern analytics engineering projects are structured in real-world environments.
+
+From raw ingestion to analytics-ready reporting, the project walks through the complete lifecycle of building a scalable SQL-based analytics platform.
+
+Happy Learning 🚀
