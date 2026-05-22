@@ -1,6 +1,6 @@
 /*
 ===============================================================================
-Database Exploration & Schema Analysis
+Database Exploration
 ===============================================================================
 Purpose:
     - To explore the structure of the data warehouse.
